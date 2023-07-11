@@ -25,7 +25,7 @@ class App extends Component {
     );
 
     isAlready && this.state.contacts.length > 0
-      ? alert('Contact already')
+      ? alert(`${this.state.name} is already in contacts`)
       : this.addContact(contact);
 
     e.target.reset();
