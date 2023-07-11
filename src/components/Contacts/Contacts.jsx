@@ -1,5 +1,4 @@
-function Contacts({ contacts }) {
-  //   console.log(contacts);
+function Contacts({ contacts, onRemove }) {
   return (
     <ul>
       {contacts.map(({ name, number, id }) => {
@@ -7,6 +6,9 @@ function Contacts({ contacts }) {
           <li key={id}>
             <p>{name}</p>
             <p>{number}</p>
+            <button type="button" onClick={() => onRemove(id)}>
+              Delete
+            </button>
           </li>
         );
       })}

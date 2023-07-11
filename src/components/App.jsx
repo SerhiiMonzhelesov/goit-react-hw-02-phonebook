@@ -9,26 +9,6 @@ class App extends Component {
   state = {
     contacts: [],
     filter: '',
-    name: '',
-    number: '',
-  };
-
-  onInputChange = e => {
-    this.setState({ [e.target.name]: e.target.value });
-  };
-
-  onFormSubmit = e => {
-    e.preventDefault();
-    const contact = { name: this.state.name, number: this.state.number };
-    const isAlready = this.state.contacts.some(
-      contact => contact.name === this.state.name
-    );
-
-    isAlready && this.state.contacts.length > 0
-      ? alert(`${this.state.name} is already in contacts`)
-      : this.addContact(contact);
-
-    e.target.reset();
   };
 
   addContact = contact => {
@@ -42,8 +22,13 @@ class App extends Component {
   };
 
   handleChangeFilter = e => {
-    console.log(e.target.value);
     this.setState({ filter: e.target.value });
+  };
+
+  onRemove = contactId => {
+    this.setState({
+      contacts: this.state.contacts.filter(contact => contact.id !== contactId),
+    });
   };
 
   render() {
@@ -57,12 +42,12 @@ class App extends Component {
       <Container>
         <h1>Phonebook</h1>
         <ContactForm
-          onInputChange={this.onInputChange}
-          onFormSubmit={this.onFormSubmit}
+          contacts={this.state.contacts}
+          addContact={this.addContact}
         />
         <h2>Contacts</h2>
         <Filter handleChangeFilter={this.handleChangeFilter} />
-        <Contacts contacts={filteredContacts} />
+        <Contacts contacts={filteredContacts} onRemove={this.onRemove} />
       </Container>
     );
   }
