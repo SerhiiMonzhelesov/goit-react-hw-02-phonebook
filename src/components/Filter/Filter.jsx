@@ -1,9 +1,11 @@
+import StyledFilter from './StyledFilter';
+
 function Filter({ handleChangeFilter }) {
   return (
-    <label>
+    <StyledFilter>
       Find contacts by name
       <input type="text" onChange={handleChangeFilter}></input>
-    </label>
+    </StyledFilter>
   );
 }
 

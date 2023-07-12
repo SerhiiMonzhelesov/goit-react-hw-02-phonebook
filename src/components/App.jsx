@@ -48,7 +48,11 @@ class App extends Component {
           contacts={this.state.contacts}
           addContact={this.addContact}
         />
-        {noContacts ? <p>No contacts in the phonebook</p> : <h2>Contacts</h2>}
+        {noContacts ? (
+          <p className="message">No contacts in the phonebook</p>
+        ) : (
+          <h2>Contacts</h2>
+        )}
         {oneContact ? null : (
           <Filter handleChangeFilter={this.handleChangeFilter} />
         )}

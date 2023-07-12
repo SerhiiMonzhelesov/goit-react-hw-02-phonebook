@@ -10,7 +10,7 @@ function Contacts({ contacts, onRemove }) {
             <p className="text">{name}</p>
             <p>{number}</p>
             <button type="button" onClick={() => onRemove(id)} className="btn">
-              <ImBin className="global" />
+              <ImBin className="icon" />
             </button>
           </li>
         );
