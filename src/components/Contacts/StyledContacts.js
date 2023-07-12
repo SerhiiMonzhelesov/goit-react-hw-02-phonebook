@@ -4,11 +4,10 @@ const StyledContacts = styled.ul`
   display: flex;
   flex-direction: column;
   gap: 10px;
-  font-size: 14px;
   padding: 0;
   margin: 0;
   width: 100%;
-  max-width: 315px;
+  max-width: 400px;
 
   & button {
     border: none;
@@ -25,8 +24,8 @@ const StyledContacts = styled.ul`
 
   & .icon {
     color: inherit;
-    width: 14px;
-    height: 14px;
+    width: 16px;
+    height: 16px;
   }
 
   & li {
@@ -37,7 +36,7 @@ const StyledContacts = styled.ul`
     justify-content: space-between;
     border-radius: 10px;
     background: #dcf1e759;
-    font-size: 12px;
+    font-size: 14px;
     box-shadow: 3px 3px 5px 0px #d7d3d3;
   }
 

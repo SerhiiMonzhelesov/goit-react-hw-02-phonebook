@@ -4,7 +4,7 @@ const StyledContactForm = styled.form`
   display: flex;
   flex-direction: column;
   gap: 25px;
-  align-items: center;
+  /* align-items: center; */
   width: 100%;
   border: 1px solid #cce2ce4d;
   border-radius: 8px;
@@ -14,14 +14,14 @@ const StyledContactForm = styled.form`
   background: #dcf1e759;
 
   & label {
-    font-size: 12px;
+    font-size: 16px;
     text-align: end;
     width: 100%;
-    max-width: 250px;
+    max-width: 325px;
   }
 
   & input {
-    font-size: 10px;
+    font-size: 14px;
     margin-left: 15px;
     padding: 4px;
     border-radius: 5px;
@@ -31,7 +31,7 @@ const StyledContactForm = styled.form`
     box-shadow: 1px 1px 4px 0px #d7d3d3;
     background: #f9faf9fc;
     width: 100%;
-    max-width: 150px;
+    max-width: 180px;
   }
 
   & input:focus {
@@ -39,7 +39,7 @@ const StyledContactForm = styled.form`
   }
 
   & button {
-    font-size: 12px;
+    font-size: 16px;
     color: #22301e;
     padding: 8px;
     border: 1px solid #8aee8a7d;
@@ -47,6 +47,7 @@ const StyledContactForm = styled.form`
     background: #93e86973;
     cursor: pointer;
     text-shadow: 0px 0px 5px #16430cc9;
+    align-self: center;
   }
 
   & button:hover {
