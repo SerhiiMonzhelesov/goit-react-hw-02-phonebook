@@ -38,8 +38,8 @@ class App extends Component {
         .includes(this.state.filter.toLowerCase().trim())
     );
 
-    const noContacts = this.state.contacts.length === 0;
-    const oneContact = this.state.contacts.length <= 1;
+    // const noContacts = this.state.contacts.length === 0;
+    // const oneContact = this.state.contacts.length <= 1;
 
     return (
       <Container>
@@ -48,12 +48,12 @@ class App extends Component {
           contacts={this.state.contacts}
           addContact={this.addContact}
         />
-        {noContacts ? (
-          <p className="message">No contacts in the phonebook</p>
-        ) : (
+        {this.state.contacts.length ? (
           <h2>Contacts</h2>
+        ) : (
+          <p className="message">No contacts in the phonebook</p>
         )}
-        {oneContact ? null : (
+        {this.state.contacts.length > 1 && (
           <Filter handleChangeFilter={this.handleChangeFilter} />
         )}
 
