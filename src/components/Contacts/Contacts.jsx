@@ -1,5 +1,6 @@
 import StyledContacts from './StyledContacts';
 import { ImBin } from 'react-icons/im';
+import PropTypes from 'prop-types';
 
 function Contacts({ contacts, onRemove }) {
   return (
@@ -20,3 +21,14 @@ function Contacts({ contacts, onRemove }) {
 }
 
 export default Contacts;
+
+Contacts.propTypes = {
+  contacts: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      number: PropTypes.string.isRequired,
+    }).isRequired
+  ).isRequired,
+  onRemove: PropTypes.func.isRequired,
+};

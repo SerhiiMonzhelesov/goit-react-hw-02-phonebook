@@ -1,6 +1,6 @@
 import { Component } from 'react';
 import StyledContactForm from './StyledContactForm';
-// import StyledContactForm from './StyledContactForm';
+import PropTypes from 'prop-types';
 
 class ContactForm extends Component {
   state = {
@@ -64,3 +64,14 @@ class ContactForm extends Component {
 }
 
 export default ContactForm;
+
+ContactForm.propTypes = {
+  contacts: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      number: PropTypes.string.isRequired,
+    }).isRequired
+  ).isRequired,
+  addContact: PropTypes.func.isRequired,
+};

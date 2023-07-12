@@ -1,4 +1,5 @@
 import StyledFilter from './StyledFilter';
+import PropTypes from 'prop-types';
 
 function Filter({ handleChangeFilter }) {
   return (
@@ -10,3 +11,7 @@ function Filter({ handleChangeFilter }) {
 }
 
 export default Filter;
+
+Filter.propTypes = {
+  handleChangeFilter: PropTypes.func.isRequired,
+};

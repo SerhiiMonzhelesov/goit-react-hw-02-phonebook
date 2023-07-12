@@ -38,9 +38,6 @@ class App extends Component {
         .includes(this.state.filter.toLowerCase().trim())
     );
 
-    // const noContacts = this.state.contacts.length === 0;
-    // const oneContact = this.state.contacts.length <= 1;
-
     return (
       <Container>
         <h1>Phonebook</h1>
