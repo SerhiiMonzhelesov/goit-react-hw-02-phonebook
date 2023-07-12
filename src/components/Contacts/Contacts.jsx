@@ -1,18 +1,21 @@
+import StyledContacts from './StyledContacts';
+import { ImBin } from 'react-icons/im';
+
 function Contacts({ contacts, onRemove }) {
   return (
-    <ul>
+    <StyledContacts>
       {contacts.map(({ name, number, id }) => {
         return (
-          <li key={id}>
-            <p>{name}</p>
+          <li key={id} className="item">
+            <p className="text">{name}</p>
             <p>{number}</p>
-            <button type="button" onClick={() => onRemove(id)}>
-              Delete
+            <button type="button" onClick={() => onRemove(id)} className="btn">
+              <ImBin className="global" />
             </button>
           </li>
         );
       })}
-    </ul>
+    </StyledContacts>
   );
 }
 

@@ -38,6 +38,9 @@ class App extends Component {
         .includes(this.state.filter.toLowerCase().trim())
     );
 
+    const noContacts = this.state.contacts.length === 0;
+    const oneContact = this.state.contacts.length <= 1;
+
     return (
       <Container>
         <h1>Phonebook</h1>
@@ -45,8 +48,11 @@ class App extends Component {
           contacts={this.state.contacts}
           addContact={this.addContact}
         />
-        <h2>Contacts</h2>
-        <Filter handleChangeFilter={this.handleChangeFilter} />
+        {noContacts ? <p>No contacts in the phonebook</p> : <h2>Contacts</h2>}
+        {oneContact ? null : (
+          <Filter handleChangeFilter={this.handleChangeFilter} />
+        )}
+
         <Contacts contacts={filteredContacts} onRemove={this.onRemove} />
       </Container>
     );
