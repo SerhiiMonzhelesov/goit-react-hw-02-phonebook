@@ -19,7 +19,7 @@ class ContactForm extends Component {
       contact => contact.name === this.state.name
     );
 
-    isAlready && this.props.contacts.length > 0
+    isAlready
       ? alert(`${this.state.name} is already in contacts`)
       : this.props.addContact(this.state);
 

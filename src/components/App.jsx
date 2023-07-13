@@ -31,12 +31,17 @@ class App extends Component {
     }));
   };
 
-  render() {
-    const { contacts, filter } = this.state;
-
-    const filteredContacts = contacts.filter(contact =>
-      contact.name.toLowerCase().includes(filter.toLowerCase().trim())
+  filterContacts = () => {
+    const filteredContacts = this.state.contacts.filter(contact =>
+      contact.name
+        .toLowerCase()
+        .includes(this.state.filter.toLowerCase().trim())
     );
+    return filteredContacts;
+  };
+
+  render() {
+    const { contacts } = this.state;
 
     return (
       <Container>
@@ -51,7 +56,7 @@ class App extends Component {
           <Filter handleChangeFilter={this.handleChangeFilter} />
         )}
 
-        <Contacts contacts={filteredContacts} onRemove={this.onRemove} />
+        <Contacts contacts={this.filterContacts()} onRemove={this.onRemove} />
       </Container>
     );
   }
