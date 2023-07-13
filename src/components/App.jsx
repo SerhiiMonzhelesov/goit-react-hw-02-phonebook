@@ -32,25 +32,22 @@ class App extends Component {
   };
 
   render() {
-    const filteredContacts = this.state.contacts.filter(contact =>
-      contact.name
-        .toLowerCase()
-        .includes(this.state.filter.toLowerCase().trim())
+    const { contacts, filter } = this.state;
+
+    const filteredContacts = contacts.filter(contact =>
+      contact.name.toLowerCase().includes(filter.toLowerCase().trim())
     );
 
     return (
       <Container>
         <h1>Phonebook</h1>
-        <ContactForm
-          contacts={this.state.contacts}
-          addContact={this.addContact}
-        />
-        {this.state.contacts.length ? (
+        <ContactForm contacts={contacts} addContact={this.addContact} />
+        {contacts.length ? (
           <h2>Contacts</h2>
         ) : (
           <p className="message">No contacts in the phonebook</p>
         )}
-        {this.state.contacts.length > 1 && (
+        {contacts.length > 1 && (
           <Filter handleChangeFilter={this.handleChangeFilter} />
         )}
 
